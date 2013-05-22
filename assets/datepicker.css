@@ -4,11 +4,13 @@
 	background:#fff;
 	color:#000;
 	position:absolute;
-	z-index:9999;
+	z-index:99999;
 	float:left;
 }
 .dp-popup-inline {
+	display:inline-block;
 	position:relative;
+	float:none;
 }
 .dp-popup * {
 	margin:0;
@@ -45,10 +47,12 @@
 .dp-popup .nav:hover {color:#fa0;}
 .dp-popup .nav:active {line-height:1.24em;}
 .dp-popup .nav.disabled {color:#777;}
+
 .dp-popup table {
 	border-spacing:0;
 	border-collapse:collapse;
 	background:#fff;
+	border:1px solid #fa0;
 }
 .dp-popup th,
 .dp-popup td {
@@ -61,7 +65,6 @@
 	background:#fa0;
 	color:#fff;
 	text-transform:uppercase;
-	border:0;
 	font-size:9px;
 	letter-spacing:1px;
 	text-indent:1px;
