@@ -10,7 +10,7 @@
 	<script type="text/javascript">
 		$(function() {
 			$('input.date').datePicker({clickInput:true,showYearNavigation:false,showHeader:true,createButton:true});
-			$('div.date').datePicker({inline:true,showYearNavigation:false,showHeader:true});
+			$('section.date').datePicker({inline:true,showYearNavigation:false,showHeader:true});
 		})
 		
 		
@@ -58,25 +58,44 @@
 			var now = moment();
 			$date2.dpSetDisplayedMonth(now.month()+1, now.year());
 			// add the generated combined plugin to the document
-			$('#multimonth').empty().append($date1, $date2);
+			$('.multimonth').empty().append($date1, $date2);
 		});
 		
 	</script>
 	<style type="text/css">
-		#multimonth div {
+		.multimonth div {
 			float:left;
 			margin:0 -1px 0 0;
 		}
 		
-		div {
+		body {
+			background:#ddd;
+			font:normal 14px Helvetica, arial, sans-serif;
+		}
+		.fl {
+			float:left;
+		}
+		section {
+			display:block;
+			overflow:hidden;
+			clear:both;
 			margin:10px 0;
+		}
+		hr {
+			border-width:1px 0;
+			opacity:.6;
 		}
 	</style>
 </head>
 <body>
-	<div class="date"></div>
+	<h4>Inline:</h4>
+	<section class="date"></section>
+	<hr>
+	<h4>Double:</h4>
+	<section class="multimonth"></section>
+	<hr>
+	<h4>Input:</h4>
 	<input type="text" class="date">
-	<div id="multimonth"></div>
 </body>
 </html>
 
