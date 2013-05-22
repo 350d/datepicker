@@ -6,6 +6,6 @@ Classic Date Picker (by Kelvin Luck - http://www.kelvinluck.com/) rewrited using
 Features
 --------
 
-- HTML5 simplified marckup
+- HTML5 simplified markup
 - Reduced/simplified CSS
 - Moment.js
