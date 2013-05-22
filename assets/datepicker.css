@@ -1,11 +1,11 @@
 .dp-popup {
+	font-size:11px;
 	border:0;
 	background:#fff;
 	color:#000;
 	position:absolute;
 	z-index:9999;
 	float:left;
-	font-size:10px;
 }
 .dp-popup-inline {
 	position:relative;
