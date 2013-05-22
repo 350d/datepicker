@@ -34,8 +34,14 @@
 	color:#fff;
 	text-decoration:none;
 }
+.dp-popup .year {
+	z-index:300;
+	width:1em;
+}
 .dp-popup .prev {left:0;}
 .dp-popup .next {right:0;}
+.dp-popup .year.prev {left:.7em;}
+.dp-popup .year.next {right:.7em;}
 .dp-popup .nav:hover {color:#fa0;}
 .dp-popup .nav:active {line-height:1.24em;}
 .dp-popup .nav.disabled {color:#777;}
