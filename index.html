@@ -12,11 +12,71 @@
 			$('input.date').datePicker({clickInput:true,showYearNavigation:false,showHeader:true,createButton:true});
 			$('div.date').datePicker({inline:true,showYearNavigation:false,showHeader:true});
 		})
+		
+		
+		$(function()
+		{
+			// create the left hand datePicker and add the relevant event listeners to sync it to the right hand one...
+			$date1 = $('<div />')
+				.datePicker({inline:true})
+				.bind(
+					'dpMonthChanged',
+					function(event, displayedMonth, displayedYear)
+					{
+						$date2.dpSetDisplayedMonth(displayedMonth+1, displayedYear);
+					}
+				)
+				.bind(
+					'dateSelected',
+					function(event, date, $td, status)
+					{
+						$date2.dpSetSelected(date.format(), status, false);
+					}
+				);
+			// remove the "forward" navigation from the first date picker
+			$('.next', $date1).empty();
+			// create the right hand datePicker and add the relevant event listeners to sync it to the left hand one...
+			$date2 = $('<div />')
+				.datePicker({inline:true})
+				.bind(
+					'dpMonthChanged',
+					function(event, displayedMonth, displayedYear)
+					{
+						$date1.dpSetDisplayedMonth(displayedMonth-1, displayedYear);
+					}
+				)
+				.bind(
+					'dateSelected',
+					function(event, date, $td, status)
+					{
+						$date1.dpSetSelected(date.format(), status, false);
+					}
+				);
+			// remove the "backward" navigation from the second date picker
+			$('.prev', $date2).empty();
+			// initialise the date pickers to consecutive months ($date1 defaults to this month so set $date2 to next month)
+			var now = moment();
+			$date2.dpSetDisplayedMonth(now.month()+1, now.year());
+			// add the generated combined plugin to the document
+			$('#multimonth').empty().append($date1, $date2);
+		});
+		
 	</script>
+	<style type="text/css">
+		#multimonth div {
+			float:left;
+			margin:0 -1px 0 0;
+		}
+		
+		div {
+			margin:10px 0;
+		}
+	</style>
 </head>
 <body>
 	<div class="date"></div>
 	<input type="text" class="date">
+	<div id="multimonth"></div>
 </body>
 </html>
 
