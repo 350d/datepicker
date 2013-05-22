@@ -1,5 +1,5 @@
-datepicker
-==========
+jQuery Date Picker
+==================
 
-Rewrited Date Picker (by Kelvin Luck - http://www.kelvinluck.com/) using moment.js (by http://github.com/timrwood/moment/)
+Rewrited classic Date Picker (by Kelvin Luck - http://www.kelvinluck.com/) using Moment.js (by http://github.com/timrwood/moment/)
 
